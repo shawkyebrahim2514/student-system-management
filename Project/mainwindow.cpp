@@ -6,6 +6,9 @@
 #include "editstudentwindow.h"
 #include "allstudentswindow.h"
 #include <QMessageBox>
+bool isLogin = false;
+QString adminUserName;
+QString adminPassword;
 std::map<int, student>allData;
 student *ptrStudent;
 year *ptrYear;
@@ -26,19 +29,36 @@ MainWindow::MainWindow(QWidget *parent)
     qApp->setStyleSheet(style);
 
 
+    QFile adminFile("database/Admin.txt");
+    if(adminFile.exists()){
+        adminFile.open(QFile::ReadOnly);
+        QString line = adminFile.readLine();
+        QStringList lineData = line.split(' ');
+        adminUserName = lineData.at(0);
+        adminPassword = lineData.at(1);
+    }else{
+        adminFile.open(QIODevice::WriteOnly);
+        QTextStream out(&adminFile);
+        adminUserName = "Admin";
+        adminPassword = "Admin@1234";
+        out << "Admin" << " " << "Admin@1234";
+        adminFile.flush();
+        adminFile.close();
+    }
+
+
     dataDir.cd("database");
     QString line, ID;
     QStringList lineData, subjectData;
     foreach(QFileInfo val, dataDir.entryInfoList()){
-        //QMessageBox::information(this,"hello",val.filePath());
+        //QMessageBox::information(this,"fsf",val.fileName());
+        if(val.fileName() == "Admin.txt") continue;
         QFile file(val.filePath());
         if(file.open(QFile::ReadOnly | QFile::Text)){
-            //QMessageBox::information(this,"hello",val.filePath());
             ptrStudent = new student;
             // first line (ID and student name and student GPA)
             line = file.readLine();
             lineData = line.split('-');
-            //QMessageBox::information(this,"hello",lineData.at(2));
             ptrStudent->name = lineData.at(1);
             ptrStudent->GPA = lineData.at(2).toDouble();
             ID = lineData.at(0);
@@ -118,9 +138,6 @@ MainWindow::MainWindow(QWidget *parent)
         }
         file.close();
     }
-
-    /*allData[20210184].firstYear.firstSemester["Programming 1"] = 3.55;
-    allData[20210184].name = "shawky";*/
 }
 
 MainWindow::~MainWindow()
@@ -197,6 +214,19 @@ void MainWindow::on_searchBtn_clicked()
 
 void MainWindow::on_editStudentBtn_clicked()
 {
+    if(!isLogin){
+        QString userName = QInputDialog::getText(this,"Admin user name","Enter your user name");
+        if(userName != adminUserName){
+            QMessageBox::warning(this,"Failed","User name is not correct!");
+            return;
+        }
+        QString password = QInputDialog::getText(this,"Admin password","Enter your password");
+        if(password != adminPassword){
+            QMessageBox::warning(this,"Failed","Admin password is not correct!");
+            return;
+        }
+        isLogin = true;
+    }
     editStudentWindow screen;
     screen.exec();
     screen.show();
@@ -210,3 +240,36 @@ void MainWindow::on_allStudentsBtn_clicked()
     screen.show();
 }
 
+
+void MainWindow::on_changeAdminBtn_clicked()
+{
+    QString userName = QInputDialog::getText(this,"Admin user name","Enter your user name");
+    if(userName != adminUserName){
+        QMessageBox::warning(this,"Failed","User name is not correct!");
+        return;
+    }
+    QString password = QInputDialog::getText(this,"Admin password","Enter your password");
+    if(password != adminPassword){
+        QMessageBox::warning(this,"Failed","Admin password is not correct!");
+        return;
+    }
+    QString newUserName = QInputDialog::getText(this,"Admin user name","Enter new user name");
+    if(newUserName.isEmpty()){
+        QMessageBox::warning(this,"Failed","Admin user name mustn't be empty");
+        return;
+    }
+    QString newPassword = QInputDialog::getText(this,"Admin password","Enter new password");
+    if(newPassword.isEmpty()){
+        QMessageBox::warning(this,"Failed","Admin password mustn't be empty");
+        return;
+    }
+    QMessageBox::information(this,"Changing username and password","Successfully changing");
+    adminUserName = newUserName;
+    adminPassword = newPassword;
+    QFile adminFile("database/Admin.txt");
+    adminFile.open(QFile::WriteOnly);
+    QTextStream out(&adminFile);
+    out << newUserName << ' ' << newPassword;
+    adminFile.flush();
+    adminFile.close();
+}

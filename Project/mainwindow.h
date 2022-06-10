@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QDir>
+#include <QInputDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -24,6 +25,8 @@ private slots:
     void on_editStudentBtn_clicked();
 
     void on_allStudentsBtn_clicked();
+
+    void on_changeAdminBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
