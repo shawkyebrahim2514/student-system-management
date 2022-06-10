@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>essential files/stylesheet.qss</file>
+        <file>icons/icon.png</file>
+        <file>icons/edit.png</file>
+        <file>icons/editWindow.png</file>
+        <file>icons/register.png</file>
+        <file>icons/registerWindow.png</file>
+        <file>icons/search.png</file>
+        <file>icons/searchWindow.png</file>
+    </qresource>
+</RCC>
