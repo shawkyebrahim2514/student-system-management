@@ -53,7 +53,7 @@
        </size>
       </property>
       <property name="text">
-       <string>register new student</string>
+       <string>Register new student</string>
       </property>
       <property name="iconSize">
        <size>
@@ -72,7 +72,7 @@
        </size>
       </property>
       <property name="text">
-       <string>search a student</string>
+       <string>Search for a student</string>
       </property>
      </widget>
     </item>
@@ -85,7 +85,7 @@
        </size>
       </property>
       <property name="text">
-       <string>edit student info</string>
+       <string>Edit student info</string>
       </property>
      </widget>
     </item>
@@ -98,7 +98,7 @@
        </size>
       </property>
       <property name="text">
-       <string>change Admin</string>
+       <string>Change admin</string>
       </property>
      </widget>
     </item>

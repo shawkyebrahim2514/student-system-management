@@ -127,6 +127,8 @@ void editStudentWindow::on_firstYearBtn_clicked()
     ui->subjectsArea->clear();
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    yearName = "First year";
+    ui->yearAndSemesterLabel->setText(yearName);
 }
 
 
@@ -143,6 +145,8 @@ void editStudentWindow::on_secondYearBtn_clicked()
     ui->subjectsArea->clear();
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    yearName = "Second year";
+    ui->yearAndSemesterLabel->setText(yearName);
 }
 
 
@@ -159,6 +163,8 @@ void editStudentWindow::on_thirdYearBtn_clicked()
     ui->subjectsArea->clear();
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    yearName = "Third year";
+    ui->yearAndSemesterLabel->setText(yearName);
 }
 
 
@@ -175,6 +181,8 @@ void editStudentWindow::on_fourthYearBtn_clicked()
     ui->subjectsArea->clear();
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    yearName = "Fourth year";
+    ui->yearAndSemesterLabel->setText(yearName);
 }
 
 
@@ -195,6 +203,7 @@ void editStudentWindow::on_firstSemesterBtn_clicked()
     }
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    ui->yearAndSemesterLabel->setText(yearName + " - First semester");
 }
 
 
@@ -215,6 +224,7 @@ void editStudentWindow::on_secondSemesterBtn_clicked()
     }
     ui->subjectNameArea->setText("");
     ui->subjectGradeArea->setText("");
+    ui->yearAndSemesterLabel->setText(yearName + " - Second semester");
 }
 
 

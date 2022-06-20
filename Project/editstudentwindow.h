@@ -12,6 +12,7 @@ class editStudentWindow : public QDialog
     Q_OBJECT
 
 public:
+    QString yearName;
     explicit editStudentWindow(QWidget *parent = nullptr);
     ~editStudentWindow();
 

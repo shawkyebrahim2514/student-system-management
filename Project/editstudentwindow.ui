@@ -18,6 +18,60 @@
     <normaloff>:/icons/editWindow.png</normaloff>:/icons/editWindow.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QPushButton" name="firstYearBtn">
+         <property name="text">
+          <string>First year</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="secondYearBtn">
+         <property name="text">
+          <string>Second year</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="thirdYearBtn">
+         <property name="text">
+          <string>Third year</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="fourthYearBtn">
+         <property name="text">
+          <string>Fourth year</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="firstSemesterBtn">
+         <property name="text">
+          <string>First semester</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="secondSemesterBtn">
+         <property name="text">
+          <string>Second semester</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -30,43 +84,27 @@
      <item>
       <widget class="QPushButton" name="checkIDBtn">
        <property name="text">
-        <string>check ID</string>
+        <string>Check ID</string>
        </property>
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="1" column="0">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item row="2" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <widget class="QPushButton" name="deleteStudentBtn">
+        <widget class="QPushButton" name="changeNameOrIDBtn">
          <property name="text">
-          <string>delete student</string>
+          <string>Change name or ID</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="changeNameOrIDBtn">
+        <widget class="QPushButton" name="deleteStudentBtn">
          <property name="text">
-          <string>change name or ID</string>
+          <string>Delete student</string>
          </property>
         </widget>
        </item>
@@ -84,7 +122,7 @@
        <item>
         <widget class="QLineEdit" name="studentGPAArea">
          <property name="placeholderText">
-          <string>student GPA</string>
+          <string>Student GPA</string>
          </property>
         </widget>
        </item>
@@ -93,11 +131,21 @@
      <item>
       <widget class="QPushButton" name="saveNameAndIDBtn">
        <property name="text">
-        <string>save name and ID</string>
+        <string>Save name and ID</string>
        </property>
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="7" column="0">
+    <widget class="QListWidget" name="subjectsArea">
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <spacer name="verticalSpacer_4">
@@ -114,60 +162,6 @@
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="4" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QPushButton" name="firstYearBtn">
-         <property name="text">
-          <string>first year</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="secondYearBtn">
-         <property name="text">
-          <string>second year</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="thirdYearBtn">
-         <property name="text">
-          <string>third year</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="fourthYearBtn">
-         <property name="text">
-          <string>fourth year</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="firstSemesterBtn">
-         <property name="text">
-          <string>first semester</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="secondSemesterBtn">
-         <property name="text">
-          <string>second semester</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
    </item>
    <item row="5" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -194,21 +188,21 @@
        <item>
         <widget class="QPushButton" name="updateSubjectBtn">
          <property name="text">
-          <string>update subject</string>
+          <string>Update subject</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="deleteSubjectBtn">
          <property name="text">
-          <string>delete subject</string>
+          <string>Delete subject</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="addNewSubjectBtn">
          <property name="text">
-          <string>add new subject</string>
+          <string>Add new subject</string>
          </property>
         </widget>
        </item>
@@ -216,13 +210,29 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0">
-    <widget class="QListWidget" name="subjectsArea">
-     <property name="verticalScrollMode">
-      <enum>QAbstractItemView::ScrollPerPixel</enum>
+   <item row="1" column="0">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="horizontalScrollMode">
-      <enum>QAbstractItemView::ScrollPerItem</enum>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="yearAndSemesterLabel">
+     <property name="text">
+      <string>Year and Semester</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>

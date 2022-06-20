@@ -52,6 +52,8 @@ void studentSearching::on_firstYearBtn_clicked()
     ptrYear = &ptrStudent->firstYear;
     ui->firstSemesterBtn->setEnabled(true);
     ui->secondSemesterBtn->setEnabled(true);
+    yearName = "First year";
+    ui->yearAndSemesterLabel->setText(yearName);
     ui->subjectsArea->clear();
 }
 
@@ -61,6 +63,8 @@ void studentSearching::on_secondYearBtn_clicked()
     ptrYear = &ptrStudent->secondYear;
     ui->firstSemesterBtn->setEnabled(true);
     ui->secondSemesterBtn->setEnabled(true);
+    yearName = "Second year";
+    ui->yearAndSemesterLabel->setText(yearName);
     ui->subjectsArea->clear();
 }
 
@@ -70,6 +74,8 @@ void studentSearching::on_thirdYearBtn_clicked()
     ptrYear = &ptrStudent->thirdYear;
     ui->firstSemesterBtn->setEnabled(true);
     ui->secondSemesterBtn->setEnabled(true);
+    yearName = "Third year";
+    ui->yearAndSemesterLabel->setText(yearName);
     ui->subjectsArea->clear();
 }
 
@@ -79,6 +85,8 @@ void studentSearching::on_fourthYearBtn_clicked()
     ptrYear = &ptrStudent->fourthYear;
     ui->firstSemesterBtn->setEnabled(true);
     ui->secondSemesterBtn->setEnabled(true);
+    yearName = "Fourth year";
+    ui->yearAndSemesterLabel->setText(yearName);
     ui->subjectsArea->clear();
 }
 
@@ -86,6 +94,7 @@ void studentSearching::on_fourthYearBtn_clicked()
 void studentSearching::on_firstSemesterBtn_clicked()
 {
     ptrSemester = &ptrYear->firstSemester;
+    ui->yearAndSemesterLabel->setText(yearName + " - First semester");
     ui->subjectsArea->clear();
     for(auto& val : *ptrSemester){
         ui->subjectsArea->addItem(val.first);
@@ -99,6 +108,7 @@ void studentSearching::on_firstSemesterBtn_clicked()
 void studentSearching::on_secondSemesterBtn_clicked()
 {
     ptrSemester = &ptrYear->secondSemester;
+    ui->yearAndSemesterLabel->setText(yearName + " - Second semester");
     ui->subjectsArea->clear();
     for(auto& val : *ptrSemester){
         ui->subjectsArea->addItem(val.first);

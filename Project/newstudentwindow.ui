@@ -45,7 +45,7 @@
        <item>
         <widget class="QPushButton" name="checkIDBtn">
          <property name="text">
-          <string>check ID</string>
+          <string>Check ID</string>
          </property>
         </widget>
        </item>

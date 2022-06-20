@@ -198,6 +198,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_registerBtn_clicked()
 {
+    if(!isLogin){
+        QString userName = QInputDialog::getText(this,"Admin user name","Enter your user name");
+        if(userName != adminUserName){
+            QMessageBox::warning(this,"Failed","User name is not correct!");
+            return;
+        }
+        QString password = QInputDialog::getText(this,"Admin password","Enter your password");
+        if(password != adminPassword){
+            QMessageBox::warning(this,"Failed","Admin password is not correct!");
+            return;
+        }
+        isLogin = true;
+    }
     newStudentWindow screen;
     screen.exec();
     screen.show();

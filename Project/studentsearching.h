@@ -12,6 +12,7 @@ class studentSearching : public QDialog
     Q_OBJECT
 
 public:
+    QString yearName;
     explicit studentSearching(QWidget *parent = nullptr);
     ~studentSearching();
 

@@ -35,12 +35,16 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLineEdit" name="IDArea"/>
+        <widget class="QLineEdit" name="IDArea">
+         <property name="placeholderText">
+          <string>Student ID</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="checkIDBtn">
          <property name="text">
-          <string>check ID</string>
+          <string>Check ID</string>
          </property>
         </widget>
        </item>
@@ -51,28 +55,28 @@
        <item>
         <widget class="QPushButton" name="firstYearBtn">
          <property name="text">
-          <string>first year</string>
+          <string>First year</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="secondYearBtn">
          <property name="text">
-          <string>second year</string>
+          <string>Second year</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="thirdYearBtn">
          <property name="text">
-          <string>third year</string>
+          <string>Third Year</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="fourthYearBtn">
          <property name="text">
-          <string>fourth year</string>
+          <string>Fourth year</string>
          </property>
         </widget>
        </item>
@@ -83,14 +87,14 @@
        <item>
         <widget class="QPushButton" name="firstSemesterBtn">
          <property name="text">
-          <string>first semester</string>
+          <string>First semester</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="secondSemesterBtn">
          <property name="text">
-          <string>second semester</string>
+          <string>Second semester</string>
          </property>
         </widget>
        </item>
@@ -116,6 +120,16 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="yearAndSemesterLabel">
+           <property name="text">
+            <string>Year and Semester</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="studentNameLabel">
            <property name="text">

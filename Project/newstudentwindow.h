@@ -12,6 +12,9 @@ class newStudentWindow : public QDialog
     Q_OBJECT
 
 public:
+    int ID;
+    QString name;
+    float GPA;
     explicit newStudentWindow(QWidget *parent = nullptr);
     ~newStudentWindow();
 

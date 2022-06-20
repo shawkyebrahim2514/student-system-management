@@ -39,7 +39,8 @@ void newStudentWindow::on_checkIDBtn_clicked()
     ui->studentNameArea->setEnabled(true);
     ui->studentGPAArea->setEnabled(true);
     ui->registerBtn->setEnabled(true);
-    ptrStudent = &allData[tarID];
+    //ptrStudent = &allData[tarID];
+    ID = tarID;
 }
 
 
@@ -53,14 +54,22 @@ void newStudentWindow::on_IDArea_textEdited(const QString &arg1)
 
 void newStudentWindow::on_registerBtn_clicked()
 {
-    QString studentGpA = ui->studentGPAArea->text();
+    QString studentGPA = ui->studentGPAArea->text();
     QString studentName = ui->studentNameArea->text();
-    if(studentGpA.isEmpty() || studentName.isEmpty()){
+    if(studentGPA.isEmpty() || studentName.isEmpty()){
         QMessageBox::warning(this,"Error","Enter valid inputs!");
         return;
     }
-    ptrStudent->name = studentName;
-    ptrStudent->GPA = studentGpA.toFloat();
+    //ptrStudent->name = studentName;
+    //ptrStudent->GPA = studentGpA.toFloat();
+    name = studentName;
+    GPA = studentGPA.toFloat();
+    auto *student = &allData[ID];
+    student->name = name;
+    student->GPA = GPA;
+    ui->studentNameArea->setText("");
+    ui->studentGPAArea->setText("");
+    ui->IDArea->setText("");
     ui->studentNameArea->setEnabled(false);
     ui->studentGPAArea->setEnabled(false);
     ui->registerBtn->setEnabled(false);
