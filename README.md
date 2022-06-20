@@ -2,6 +2,10 @@
 > student system app for registration and edit student inforamtion
 
 ```
+    this app for students who study for 4 years and has 2 semester on each year
+```
+
+```
   - you can view all students in the database
   - you can register new student (Student ID length must be 8 numbers only)
   - you can search for a student
