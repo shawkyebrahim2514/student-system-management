@@ -1,4 +1,4 @@
-# student system
+# student system management
 > student system app for registration and edit student inforamtion
 
 ```
