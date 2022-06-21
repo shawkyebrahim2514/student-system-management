@@ -1,5 +1,5 @@
 # student system management
-> student system app for registration and edit student inforamtion
+> student system app for registration and editing student information
 
 ```
     this app for students who study for 4 years and has 2 semester on each year
